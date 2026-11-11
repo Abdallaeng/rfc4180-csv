@@ -1,0 +1,67 @@
+{
+  "name": "rfc4180-csv",
+  "version": "1.0.0",
+  "description": "Small RFC 4180 CSV parser and writer: quoted fields, escaped quotes, embedded line breaks, issue reporting with line/column, CSV to JSON with conservative type inference, JSON to CSV with formula escaping. Zero dependencies.",
+  "keywords": [
+    "csv",
+    "rfc4180",
+    "rfc-4180",
+    "csv-parser",
+    "csv-to-json",
+    "json-to-csv",
+    "parser",
+    "tsv",
+    "delimiter",
+    "type-inference",
+    "csv-injection",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Technical Design Team",
+  "homepage": "https://devutility-kit.pages.dev/tools/csv-to-json/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abdallaeng/rfc4180-csv"
+  },
+  "bugs": {
+    "url": "https://github.com/Abdallaeng/rfc4180-csv/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepare": "tsup",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^9.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}
