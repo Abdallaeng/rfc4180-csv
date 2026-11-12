@@ -21,6 +21,17 @@ npm i rfc4180-csv
 > npm i github:Abdallaeng/rfc4180-csv
 > ```
 
+### Use it in the browser (no install)
+
+The built ES module is served free by jsDelivr straight from this repository:
+
+```html
+<script type="module">
+  import { parseCsv } from "https://cdn.jsdelivr.net/gh/Abdallaeng/rfc4180-csv@v1.0.0/dist/index.js";
+  console.log(parseCsv("a,b\n1,2").rows); // [["a", "b"], ["1", "2"]]
+</script>
+```
+
 ## API
 
 Outputs below are the values asserted in the test suite.
